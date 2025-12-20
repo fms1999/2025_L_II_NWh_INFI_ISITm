@@ -16,7 +16,11 @@ jobs:
 
       - checkout 
 
-      - run: make deps 
+      - run: make deps
+
+      - run:
+          name: Intentional failure
+          command: exit 1
 
       - run: make test       
 
