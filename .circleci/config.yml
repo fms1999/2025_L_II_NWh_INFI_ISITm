@@ -10,11 +10,11 @@ jobs:
 
       image: ubuntu-2204:2024.01.2
 
-        
+      docker_layer_caching: true
 
-    steps: 
+    steps:
 
-      - checkout 
+      - checkout
 
       - run: make deps
 
@@ -23,6 +23,8 @@ jobs:
       - run: make test
 
       - run: make docker_build
+
+      - run: make docker_push
 
 workflows: 
 
